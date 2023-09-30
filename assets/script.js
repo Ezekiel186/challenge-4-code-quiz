@@ -1,8 +1,11 @@
 var start = document.querySelector("#start")
 var timerEl = document.getElementById("timer")
+var question1 = document.getElementById("question-1-container")
 
 start.addEventListener("click", function() {
     timer()
+    start.classList.add("hide")
+    question1.classList.remove("hide")
 });
 
 function timer() {
@@ -19,4 +22,12 @@ function timer() {
             clearInterval(timeInterval);
         }
     }, 1000);
+}
+
+function next() {
+
+}
+
+function selectAnswer() {
+
 }
