@@ -97,5 +97,15 @@ submit.addEventListener("click", function() {
     var highscore = initials.value + "-" + timeLeft + " seconds";
     highscoreEl.textContent = highscore;
     initials.value = "";
+    localStorage.setItem("highscore", JSON.stringify(highscore));
+//     var savedHighscore = localStorage.getItem("highscore");
+// if (savedHighscore > highscore) {
+//     highscoreEl.textContent = savedHighscore;
+// } else if (savedHighscore >! highscore) {
+//     highscoreEl.textContent = highscore;
+// } else {
+    // highscoreEl.textContent = "No highscore saved";
 })
+
+
 
