@@ -16,6 +16,7 @@ var wrong = document.querySelectorAll(".wrong");
 var submit = document.getElementById("submit");
 var initials = document.getElementById("initials");
 var popUP = document.getElementById("pop-up")
+var popUPcorrect = document.getElementById("pop-up2")
 // console.log(wrong);
 start.addEventListener("click", function() {
     timer()
@@ -45,22 +46,38 @@ function updateTime() {
 correct1.addEventListener("click", function() {
     question1.classList.add("hide")
     question2.classList.remove("hide")
+    popUPcorrect.classList.remove("hide")
+        setTimeout(function() {
+        popUPcorrect.classList.add("hide");
+        }, 1000);
 });
 
 correct2.addEventListener("click", function() {
     question2.classList.add("hide")
     question3.classList.remove("hide")
+    popUPcorrect.classList.remove("hide")
+        setTimeout(function() {
+        popUPcorrect.classList.add("hide");
+        }, 1000);
 });
 
 correct3.addEventListener("click", function() {
     question3.classList.add("hide")
     question4.classList.remove("hide")
+    popUPcorrect.classList.remove("hide")
+        setTimeout(function() {
+        popUPcorrect.classList.add("hide");
+        }, 1000);
 });
 
 correct4.addEventListener("click", function() {
     question4.classList.add("hide")
     end.classList.remove("hide")
     clearInterval(timeInterval);
+    popUPcorrect.classList.remove("hide")
+        setTimeout(function() {
+        popUPcorrect.classList.add("hide");
+        }, 1000);
 });
 
 
