@@ -15,6 +15,7 @@ var timeLeft;
 var wrong = document.querySelectorAll(".wrong");
 var submit = document.getElementById("submit");
 var initials = document.getElementById("initials");
+var popUP = document.getElementById("pop-up")
 // console.log(wrong);
 start.addEventListener("click", function() {
     timer()
@@ -71,7 +72,12 @@ correct4.addEventListener("click", function() {
 for (var i=0; i < wrong.length; i++) {
     wrong[i].addEventListener("click", function() {
         timeLeft = timeLeft-5;
-        alert("Wrong Answer")
+        popUP.classList.remove("hide")
+        setTimeout(function() {
+        popUP.classList.add("hide");
+        }, 1000);
+        // alert("Wrong Answer")
+
     });
 }
 
@@ -106,6 +112,13 @@ submit.addEventListener("click", function() {
 // } else {
     // highscoreEl.textContent = "No highscore saved";
 })
+
+var savedHighscore = localStorage.getItem("highscore");
+if (savedHighscore) {
+    highscoreEl.textContent = savedHighscore;
+} else {
+    highscoreEl.textContent = "No highscore saved";
+}
 
 
 
