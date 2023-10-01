@@ -1,5 +1,6 @@
 var start = document.querySelector("#start")
 var timerEl = document.getElementById("timer")
+var highscoreEl = document.getElementById("hs")
 var question1 = document.getElementById("question-1-container")
 var question2 = document.getElementById("question-2-container")
 var question3 = document.getElementById("question-3-container")
@@ -12,6 +13,7 @@ var correct4 = document.querySelector(".correct4")
 var timeInterval;
 var timeLeft;
 var wrong = document.querySelectorAll(".wrong")
+var submit = document.getElementById("submit")
 // console.log(wrong);
 start.addEventListener("click", function() {
     timer()
@@ -79,3 +81,14 @@ function endscreen() {
     question4.classList.add("hide")
     end.classList.remove("hide")
 }
+
+submit.addEventListener("click", function(event) {
+    event.preventDefault();
+    highscore()
+var highscore = submit.value + timeLeft;
+    localStorage.setItem("highscore", JSON.stringify(highscore));
+    function highscore() {
+    highscoreEl.textContent = highscore;
+}
+});
+
