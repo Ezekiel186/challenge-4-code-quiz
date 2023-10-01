@@ -117,7 +117,7 @@ function endscreen() {
 // });
 
 submit.addEventListener("click", function() {
-    var highscore = initials.value + "-" + timeLeft + " seconds";
+    var highscore = initials.value + "= " + timeLeft + " seconds";
     highscoreEl.textContent = highscore;
     initials.value = "";
     localStorage.setItem("highscore", JSON.stringify(highscore));
