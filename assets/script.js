@@ -134,7 +134,7 @@ var savedHighscore = localStorage.getItem("highscore");
 if (savedHighscore) {
     highscoreEl.textContent = savedHighscore;
 } else {
-    highscoreEl.textContent = "No highscore saved";
+    highscoreEl.textContent = "No scores saved";
 }
 
 
