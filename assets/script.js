@@ -1,19 +1,20 @@
-var start = document.querySelector("#start")
-var timerEl = document.getElementById("timer")
-var highscoreEl = document.getElementById("hs")
-var question1 = document.getElementById("question-1-container")
-var question2 = document.getElementById("question-2-container")
-var question3 = document.getElementById("question-3-container")
-var question4 = document.getElementById("question-4-container")
-var end = document.getElementById("end")
-var correct1 = document.querySelector(".correct1")
-var correct2 = document.querySelector(".correct2")
-var correct3 = document.querySelector(".correct3")
-var correct4 = document.querySelector(".correct4")
+var start = document.querySelector("#start");
+var timerEl = document.getElementById("timer");
+var highscoreEl = document.getElementById("hs");
+var question1 = document.getElementById("question-1-container");
+var question2 = document.getElementById("question-2-container");
+var question3 = document.getElementById("question-3-container");
+var question4 = document.getElementById("question-4-container");
+var end = document.getElementById("end");
+var correct1 = document.querySelector(".correct1");
+var correct2 = document.querySelector(".correct2");
+var correct3 = document.querySelector(".correct3");
+var correct4 = document.querySelector(".correct4");
 var timeInterval;
 var timeLeft;
-var wrong = document.querySelectorAll(".wrong")
-var submit = document.getElementById("submit")
+var wrong = document.querySelectorAll(".wrong");
+var submit = document.getElementById("submit");
+var initials = document.getElementById("initials");
 // console.log(wrong);
 start.addEventListener("click", function() {
     timer()
@@ -82,13 +83,19 @@ function endscreen() {
     end.classList.remove("hide")
 }
 
-submit.addEventListener("click", function(event) {
-    event.preventDefault();
-    highscore()
-var highscore = submit.value + timeLeft;
-    localStorage.setItem("highscore", JSON.stringify(highscore));
-    function highscore() {
+// submit.addEventListener("click", function() {
+//     highscoreOnScreen()
+// var highscore = submit.value + timeLeft;
+//     localStorage.setItem("highscore", JSON.stringify(highscore));
+    
+//     function highscoreOnScreen() {
+//     highscoreEl.textContent = highscore;
+// }
+// });
+
+submit.addEventListener("click", function() {
+    var highscore = initials.value + "-" + timeLeft + " seconds";
     highscoreEl.textContent = highscore;
-}
-});
+    initials.value = "";
+})
 
