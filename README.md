@@ -10,7 +10,7 @@ This is a fun mini-quiz to test your wits. Your score is stored locally and only
 
 ## Website
 
-(./assets/website.png)
+![Photo of Code Quiz Website](assets/website.png)
 
 https://ezekiel186.github.io/challenge-4-code-quiz/
 
