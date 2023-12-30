@@ -19,8 +19,11 @@ var wrong3 = document.querySelectorAll(".wrong3");
 var wrong4 = document.querySelectorAll(".wrong4");
 var submit = document.getElementById("submit");
 var initials = document.getElementById("initials");
-var popUP = document.getElementById("pop-up")
-var popUPcorrect = document.getElementById("pop-up2")
+var popUP = document.getElementById("pop-up");
+var popUPcorrect = document.getElementById("pop-up2");
+var wrongSound =  document.getElementById("wrongSound");
+var correctSound =  document.getElementById("correctSound");
+
 // console.log(wrong);
 start.addEventListener("click", function() {
     timer()
@@ -40,7 +43,7 @@ function timer() {
             clearInterval(timeInterval);
             endscreen();
         } 
-    }, 1000);
+    }, 500);
 }
 
 function updateTime() {
@@ -51,27 +54,33 @@ correct1.addEventListener("click", function() {
     question1.classList.add("hide")
     question2.classList.remove("hide")
     popUPcorrect.classList.remove("hide")
+    correctSound.currentTime = 0;
+    correctSound.play();
         setTimeout(function() {
         popUPcorrect.classList.add("hide");
-        }, 1000);
+        }, 500);
 });
 
 correct2.addEventListener("click", function() {
     question2.classList.add("hide")
     question3.classList.remove("hide")
     popUPcorrect.classList.remove("hide")
+    correctSound.currentTime = 0;
+    correctSound.play();
         setTimeout(function() {
         popUPcorrect.classList.add("hide");
-        }, 1000);
+        }, 500);
 });
 
 correct3.addEventListener("click", function() {
     question3.classList.add("hide")
     question4.classList.remove("hide")
     popUPcorrect.classList.remove("hide")
+    correctSound.currentTime = 0;
+    correctSound.play();
         setTimeout(function() {
         popUPcorrect.classList.add("hide");
-        }, 1000);
+        }, 500);
 });
 
 correct4.addEventListener("click", function() {
@@ -79,9 +88,11 @@ correct4.addEventListener("click", function() {
     end.classList.remove("hide")
     clearInterval(timeInterval);
     popUPcorrect.classList.remove("hide")
+    correctSound.currentTime = 0;
+    correctSound.play();
         setTimeout(function() {
         popUPcorrect.classList.add("hide");
-        }, 1000);
+        }, 500);
 });
 
 
@@ -96,7 +107,7 @@ correct4.addEventListener("click", function() {
 //         popUP.classList.remove("hide")
 //         setTimeout(function() {
 //         popUP.classList.add("hide");
-//         }, 1000);
+//         }, 500);
 //         // alert("Wrong Answer")
 
 //     });
@@ -108,9 +119,11 @@ for (var i=0; i < wrong1.length; i++) {
         question1.classList.add("hide")
         question2.classList.remove("hide")
         popUP.classList.remove("hide")
+        wrongSound.currentTime = 0;
+        wrongSound.play();
         setTimeout(function() {
         popUP.classList.add("hide");
-        }, 1000);
+        }, 500);
         // alert("Wrong Answer")
 
     });
@@ -122,9 +135,11 @@ for (var i=0; i < wrong2.length; i++) {
         question2.classList.add("hide")
         question3.classList.remove("hide")
         popUP.classList.remove("hide")
+        wrongSound.currentTime = 0;
+        wrongSound.play();
         setTimeout(function() {
         popUP.classList.add("hide");
-        }, 1000);
+        }, 500);
         // alert("Wrong Answer")
 
     });
@@ -136,9 +151,11 @@ for (var i=0; i < wrong3.length; i++) {
         question3.classList.add("hide")
         question4.classList.remove("hide")
         popUP.classList.remove("hide")
+        wrongSound.currentTime = 0;
+        wrongSound.play();
         setTimeout(function() {
         popUP.classList.add("hide");
-        }, 1000);
+        }, 500);
         // alert("Wrong Answer")
 
     });
@@ -150,10 +167,12 @@ for (var i=0; i < wrong4.length; i++) {
         question4.classList.add("hide")
         end.classList.remove("hide")
         popUP.classList.remove("hide")
+        wrongSound.currentTime = 0;
+        wrongSound.play();
         setTimeout(function() {
         popUP.classList.add("hide");
         clearInterval(timeInterval);
-        }, 1000);
+        }, 500);
         // alert("Wrong Answer")
 
     });
