@@ -6,6 +6,7 @@ var question2 = document.getElementById("question-2-container");
 var question3 = document.getElementById("question-3-container");
 var question4 = document.getElementById("question-4-container");
 var end = document.getElementById("end");
+var tick = document.querySelector(".tick");
 var correct1 = document.querySelector(".correct1");
 var correct2 = document.querySelector(".correct2");
 var correct3 = document.querySelector(".correct3");
@@ -29,6 +30,7 @@ start.addEventListener("click", function() {
     timer()
     start.classList.add("hide")
     question1.classList.remove("hide")
+    tick.classList.remove("hide")
 });
 
 function timer() {
@@ -43,7 +45,7 @@ function timer() {
             clearInterval(timeInterval);
             endscreen();
         } 
-    }, 500);
+    }, 1000);
 }
 
 function updateTime() {
@@ -85,6 +87,7 @@ correct3.addEventListener("click", function() {
 
 correct4.addEventListener("click", function() {
     question4.classList.add("hide")
+    document.querySelector('.main-container').style.height = '10vh';
     end.classList.remove("hide")
     clearInterval(timeInterval);
     popUPcorrect.classList.remove("hide")
@@ -165,6 +168,7 @@ for (var i=0; i < wrong4.length; i++) {
     wrong4[i].addEventListener("click", function() {
         timeLeft = timeLeft-5;
         question4.classList.add("hide")
+        document.querySelector('.main-container').style.height = '10vh';
         end.classList.remove("hide")
         popUP.classList.remove("hide")
         wrongSound.currentTime = 0;
@@ -184,6 +188,7 @@ function endscreen() {
     question2.classList.add("hide")
     question3.classList.add("hide")
     question4.classList.add("hide")
+    document.querySelector('.main-container').style.height = '10vh';
     end.classList.remove("hide")
 }
 
@@ -198,7 +203,7 @@ function endscreen() {
 // });
 
 submit.addEventListener("click", function() {
-    var highscore = initials.value + "= " + timeLeft + " seconds";
+    var highscore = initials.value + " = " + timeLeft + " seconds";
     highscoreEl.textContent = highscore;
     initials.value = "";
     localStorage.setItem("highscore", JSON.stringify(highscore));

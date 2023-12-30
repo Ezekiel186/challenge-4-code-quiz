@@ -1,15 +1,15 @@
+:root {
+    --main: rgb(96, 18, 165);
+}
+
 .hide {
     display: none;
 }
 
 * {
     margin: 10px;
+    font-family: monospace;
 }
-
-#start { 
-    margin-left: 48.5%;
-    margin-right: 50%;
- }
 
 body {
     text-align: center;
@@ -23,16 +23,11 @@ body {
 #hs {
     display: inline;
     margin-left: 0px;
-}
-
-#pop-up2 {
-    color: rgb(0, 193, 0);
-    animation: jumpUp 0.7s ease-in-out infinite;
-}
-
-#pop-up {
-    color: red;
-    animation: shake 0.5s ease-in-out infinite;
+    background-color: turquoise;
+    color: white;
+    padding: 10px;
+    border-top-right-radius: 40px;
+    border-bottom-right-radius: 40px;
 }
 
 @keyframes shake {
@@ -50,4 +45,146 @@ body {
     20% {
       transform: translateY(-10px);
     }
+}
+
+#pop-up2 {
+    color: rgb(0, 193, 0);
+    animation: jumpUp 0.7s ease-in-out infinite;
+    font-size: 30px;
+    font-weight: 800;
+}
+
+#pop-up {
+    color: red;
+    animation: shake 0.5s ease-in-out infinite;
+    font-size: 30px;
+    font-weight: 800;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+}
+
+.centertitle {
+    background-color: var(--main);
+    color: white;
+    border-radius: 40px;
+    width: 50%;
+    font-size: 30px;
+}
+
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+}
+
+#start {
+    padding: 50px 90px;
+    font-size: 40px;
+    border-radius: 40px;
+    background-color: var(--main);
+    color: white;
+    font-weight: 900;
+    border: 0;
+    animation: grow 1s ease-in-out infinite;
+}
+
+#start:hover {
+    background-color: turquoise;
+}
+
+@keyframes grow {
+    0%, 100% {
+      transform: scale(1);
+    }
+    10% {
+      transform: scale(1.01);
+    }
+    20% {
+        transform: scale(1.02);
+    }
+    30% {
+        transform: scale(1.03);
+    }
+    40% {
+        transform: scale(1.04);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    60% {
+        transform: scale(1.04);
+    }
+    70% {
+        transform: scale(1.03);
+    }
+    80% {
+        transform: scale(1.02);
+    }
+    90% {
+        transform: scale(1.01);
+    }
+}
+
+.side {
+    font-size: 20px;
+    font-weight: 800;
+    display: flex;
+    justify-content: center;
+}
+
+.previous {
+    background-color: var(--main);
+    color: white;
+    margin-right: 0;
+    padding: 10px;
+    border-top-left-radius: 40px;
+    border-bottom-left-radius: 40px;
+}
+
+#question-1-container, #question-2-container, #question-3-container, #question-4-container {
+    background-color: var(--main);
+    height: 50vh;
+    width: 40vw;
+    border-radius: 40px;
+}
+
+#question-1-container h2, #question-2-container h2, #question-3-container h2, #question-4-container h2 {
+    color: white;
+    font-size: 30px;
+    font-weight: 800;
+}
+
+#question-1-container button, #question-2-container button, #question-3-container button, #question-4-container button {
+    padding: 1.9vh;
+    display: block;
+    background-color: white;
+    border: 0;
+    border-radius: 40px;
+    font-size: 30px;
+    font-weight: 800;
+    width: 95%;
+    margin: 10px 10px;
+}
+
+#question-1-container button:hover, #question-2-container button:hover, #question-3-container button:hover, #question-4-container button:hover {
+    background-color: turquoise;
+}
+
+
+.centerEnd {
+    display: flex;
+    justify-content: center;
+}
+
+.tick {
+    background-color: turquoise;
+    width: 40vw;
+    color: white;
+    font-size: 30px;
+    font-weight: 800;
+    border-radius: 40px;
 }
