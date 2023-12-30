@@ -223,5 +223,11 @@ if (savedHighscore) {
     highscoreEl.textContent = "No scores saved";
 }
 
+// replay
+
+document.getElementById('replay').addEventListener('click', function() {
+    location.reload();
+});
+
 
 
